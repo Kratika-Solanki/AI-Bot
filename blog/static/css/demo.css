@@ -1,0 +1,164 @@
+/* #chatbot{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 50px;
+    border-radius: 10px;
+    border:1px solid gray;
+    padding: 10px;
+}
+
+.botTest{
+    font-family: monospace;
+    font-size: 14px;
+    text-align: left;
+    line-height: 10px;
+    color:rgb(126, 121, 121);
+}
+
+#userInput{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:20px;
+    width: 50%;
+    text-align: center;
+}
+#textInput{
+    border: 3px solid white;
+    border-bottom: 3px solid lightgray;
+    font-family: monospace;
+    font-size: 14px;
+    width: 35%;
+    padding: 16%;
+    color: rgb(241, 41, 41);
+}
+#buttonInput{
+    padding: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    border: 3px solid darkgray;
+    background-color: rgb(63, 54, 54);
+    color: white;
+    border-radius: 10px;
+} */
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#chatbot {
+    flex-grow: 1;
+    width: clamp(320px, 75%, 900px); /* Increased max-width and percentage */
+    margin-top: 0;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 300px; /* Increased minimum height for chat area */
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.botTest {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px; /* Slightly larger font for messages */
+    line-height: 1.5; /* Increased line height */
+    color: #555;
+    background-color: #e9ecef;
+    padding: 10px 15px; /* Slightly more padding for messages */
+    border-radius: 8px;
+    max-width: 75%; /* Slightly increased message width */
+    align-self: flex-start;
+    word-wrap: break-word;
+}
+
+.userTest {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #007bff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 75%;
+    align-self: flex-end;
+    word-wrap: break-word;
+}
+
+#userInput {
+    width: clamp(320px, 75%, 900px); /* Match chatbot width */
+    display: flex;
+    gap: 10px;
+    padding-bottom: 0;
+    margin-top: auto;
+    align-items: flex-end; /* Align items to the bottom in case textarea grows */
+}
+
+#textInput {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #a0a0a0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px; /* Larger font size for input */
+    padding: 12px 15px; /* Increased padding */
+    color: #333;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: none; /* Crucial: Prevents manual resizing by user */
+    overflow-y: hidden; /* Hide scrollbar initially */
+    min-height: 45px; /* **Increased minimum height for the input field** */
+    max-height: 150px; /* **Maximum height before scrolling appears** */
+}
+
+#textInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+#buttonInput {
+    padding: 12px 20px; /* Adjusted padding for consistent height */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px; /* Larger font size for button */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+    /* Align button with the bottom of the growing textarea */
+    height: fit-content;
+}
+
+#buttonInput:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+#buttonInput:active {
+    background-color: #004085;
+    transform: translateY(0);
+}
